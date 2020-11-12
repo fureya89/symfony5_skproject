@@ -13,17 +13,8 @@ class IndexController extends AbstractController
      */
     public function index(): Response
     {
-        $random_number = rand(0,100);
-
-        $numbers = [
-            'first' => 1,
-            'second' => 2,
-            'third' => 3,
-        ];
-
-
         return $this->render('index/index.html.twig', [
-            'random_number' => $random_number, 'numbers' => $numbers
+
         ]);
     }
 }
