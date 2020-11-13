@@ -26,7 +26,7 @@
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +147,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/web-server-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jpHLWGHzcPXGGB3Fc5RidJ1Ntn" />
@@ -175,7 +177,7 @@
       <workItem from="1604689735887" duration="9040000" />
       <workItem from="1605207894745" duration="4329000" />
       <workItem from="1605265884013" duration="30000" />
-      <workItem from="1605265950565" duration="2105000" />
+      <workItem from="1605265950565" duration="6933000" />
     </task>
     <servers />
   </component>
@@ -203,9 +205,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1604837374060" />
-    <state x="312" y="23" width="1032" height="801" key="find.popup" timestamp="1604837721578">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2310" y="-78" width="1290" height="1128" key="find.popup" timestamp="1605299032321">
+      <screen x="1920" y="-110" width="1920" height="1160" />
     </state>
+    <state x="312" y="23" width="1032" height="801" key="find.popup/0.0.1536.824/1920.-110.1920.1160@0.0.1536.824" timestamp="1605296140878" />
+    <state x="2310" y="-78" width="1290" height="1128" key="find.popup/0.0.1536.824/1920.-110.1920.1160@1920.-110.1920.1160" timestamp="1605299032321" />
     <state x="312" y="23" width="1032" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1604837721578" />
   </component>
 </project>
