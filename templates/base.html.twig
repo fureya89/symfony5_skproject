@@ -28,16 +28,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Moje zdjęcia</a>
                         </li>
+                        {% if app.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Wyloguj się</a>
+                            <a class="nav-link" href="{{ path('app_logout') }}">Wyloguj się</a>
                         </li>
-
+                        {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Zaloguj się</a>
+                            <a class="nav-link" href="{{ path('app_login') }}">Zaloguj się</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Zarejestruj się</a>
+                            <a class="nav-link" href="{{ path('app_register') }}">Zarejestruj się</a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
