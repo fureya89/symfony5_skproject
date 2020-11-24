@@ -20,10 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cd41fa0-edbd-4303-b80c-a8bcb990c53c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/LatestPhotosController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/MyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/latest_photos/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/hosting/projekt_domkudwg_5fb570fcb02af.dwg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/hosting/projekt_domkudwg_5fb571594f73f.dwg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +180,9 @@
       <workItem from="1605439621442" duration="794000" />
       <workItem from="1605556448207" duration="3007000" />
       <workItem from="1605640156742" duration="4269000" />
-      <workItem from="1605725807183" duration="961000" />
+      <workItem from="1605725807183" duration="4752000" />
+      <workItem from="1605813810578" duration="120000" />
+      <workItem from="1605813968141" duration="5370000" />
     </task>
     <servers />
   </component>
@@ -197,6 +202,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605814014656">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605814014656" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1605266011782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
