@@ -5,7 +5,7 @@
         <title>{% block title %}Hosting zdjęć - {% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-
+            <link rel="stylesheet" href="{{ asset('assets/css/simpleLightbox.min.css') }}">
         {% endblock %}
     </head>
     <body>
@@ -25,8 +25,8 @@
                         <li class="nav-item {% if app.request.get('_route') == 'latest_photos' %}active{% endif %}">
                             <a class="nav-link" href="{{ path('latest_photos') }}">Najnowsze</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Moje zdjęcia</a>
+                        <li class="nav-item {% if app.request.get('_route') == 'my_photos' %}active{% endif %}">
+                            <a class="nav-link" href="{{ path('my_photos') }}">Moje zdjęcia</a>
                         </li>
                         {% if app.user %}
                         <li class="nav-item">
@@ -59,6 +59,8 @@
             <script src="{{ asset('assets/js/jquery-3.5.1.slim.min.js') }}"></script>
             <script src="{{ asset('assets/js/popper.min.js') }}"></script>
             <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/js/simpleLightbox.min.js') }}"></script>
+            <script src="{{ asset('assets/js/scripts.js') }}"></script>
         {% endblock %}
     </body>
 </html>

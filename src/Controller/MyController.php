@@ -19,7 +19,10 @@ class MyController extends AbstractController
      * @Route("my/photos", name="my_photos")
      */
     public function index(){
+        $entityManager = $this->getDoctrine()->getManager();
+        $myPhotos = $entityManager->getRepository(Photo::class)->findBy(['user'=>$this->getUser()]);
 
+        return $this->render('my/index.html.twig',['myPhotos'=>$myPhotos]);
     }
 
     /**
@@ -44,7 +47,7 @@ class MyController extends AbstractController
             $this->addFlash('error', 'Nie jesteś właścicielem tego zdjecia');
         }
 
-        return $this->redirectToRoute('latest_photos');
+        return $this->redirectToRoute('my_photos');
     }
 
     /**
@@ -70,7 +73,7 @@ class MyController extends AbstractController
             $this->addFlash('error', 'Nie jesteś właścicielem tego zdjecia');
         }
 
-        return $this->redirectToRoute('latest_photos');
+        return $this->redirectToRoute('my_photos');
     }
 
     /**
@@ -82,7 +85,7 @@ class MyController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $myPhotoToRemove = $entityManager->getRepository(Photo::class)->find($id);
 
-        if($this->getUser() == $myPhotoToRemove->getUser()){
+        if($myPhotoToRemove && $this->getUser() == $myPhotoToRemove->getUser()){
             try{
                 $fileManager = new Filesystem();
                 $fileManager->remove('images/hosting/'.$myPhotoToRemove->getFilename());
@@ -101,7 +104,7 @@ class MyController extends AbstractController
             $this->addFlash('error', 'Nie jesteś właścicielem zdjęcia - nie możesz go usunąć');
         }
 
-        return $this->redirectToRoute('latest_photos');
+        return $this->redirectToRoute('my_photos');
     }
 }
 
