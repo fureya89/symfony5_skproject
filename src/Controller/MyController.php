@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Photo;
+use App\Service\PhotoVisibilityService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
@@ -26,51 +27,23 @@ class MyController extends AbstractController
     }
 
     /**
-     * @Route("my/photos/set_private/{id}", name="my_photos_set_as_private")
+     * @Route ("my/photos/set_visibility/{id}/{visibility}", name="my_photos_set_visibility")
+     * @param PhotoVisibilityService $photoVisibilityService
      * @param int $id
+     * @param bool $visibility
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function myPhotoSetAsPrivate(int $id){
-        $entityManager = $this->getDoctrine()->getManager();
-        $myPhoto = $entityManager->getRepository(Photo::class)->find($id);
+    public function myPhotoChangeVisibility (PhotoVisibilityService $photoVisibilityService, int $id, bool $visibility){
 
-        if($this->getUser() == $myPhoto->getUser()){
-            try{
-                $myPhoto->setIsPublic(0);
-                $entityManager->persist($myPhoto);
-                $entityManager->flush();
-                $this->addFlash('success', 'Zdjęcie zostało ustawione jako prywatne');
-            }catch(\Exception $e){
-                $this->addFlash('error', 'Wystąpił problem przy ustawianiu jako prywatne');
-            }
-        }else{
-            $this->addFlash('error', 'Nie jesteś właścicielem tego zdjecia');
-        }
+        $messages = [
+            '0'=>'prywatne',
+            '1'=>'publiczne'
+        ];
 
-        return $this->redirectToRoute('my_photos');
-    }
-
-    /**
-     * @Route("my/photos/set_public/{id}", name="my_photos_set_as_public")
-     * @param int $id
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
-    public function myPhotoSetAsPublic(int $id){
-        $entityManager = $this->getDoctrine()->getManager();
-        $myPhoto = $entityManager->getRepository(Photo::class)->find($id);
-
-        if($this->getUser() == $myPhoto->getUser()){
-            try{
-                $myPhoto->setIsPublic(1);
-                $entityManager->persist($myPhoto);
-                $entityManager->flush();
-                $this->addFlash('success', 'Zdjęcie zostało ustawione jako publiczne');
-
-            }catch(\Exception $e){
-                $this->addFlash('error', 'Wystąpił problem przy ustawianiu jako publiczne');
-            }
-        }else{
-            $this->addFlash('error', 'Nie jesteś właścicielem tego zdjecia');
+        if($photoVisibilityService->makeVisible($id, $visibility)){
+            $this->addFlash('success', 'Zdjęcie zostało ustawione jako'.$messages[$visibility].'.');
+        } else {
+            $this->addFlash('error', 'Wystąpił problem przy ustawianiu jako'.$messages[$visibility].'.');
         }
 
         return $this->redirectToRoute('my_photos');
